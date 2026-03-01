@@ -1,0 +1,25 @@
+{
+  "name": "opencode-line-endings",
+  "version": "0.1.0",
+  "description": "OpenCode plugin that enforces consistent line endings (LF or CRLF) on file edits",
+  "type": "module",
+  "main": "index.ts",
+  "dependencies": {
+    "@opencode-ai/plugin": "latest",
+    "editorconfig": "^3.0.2"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "line-endings",
+    "crlf",
+    "lf",
+    "editorconfig",
+    "wsl"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "typescript": "^5.9.3"
+  }
+}
