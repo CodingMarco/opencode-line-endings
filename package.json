@@ -25,6 +25,10 @@
     "editorconfig",
     "wsl"
   ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^25.3.3",
