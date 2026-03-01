@@ -1,22 +1,34 @@
 # opencode-line-endings
 
+[![npm](https://img.shields.io/npm/v/opencode-line-endings)](https://www.npmjs.com/package/opencode-line-endings)
+
 An [OpenCode](https://opencode.ai) plugin that enforces consistent line endings (LF or CRLF) on all file edits, independent of the platform OpenCode runs on.
 
 The primary use case is running OpenCode inside WSL while editing Windows files — the platform reports Linux (LF), but the files need CRLF line endings.
 
 ## Installation
 
-OpenCode loads plugin **files** directly from the plugins directory (not subdirectories). The `editorconfig` dependency must be declared in a `package.json` in the config directory.
+Add the plugin to your `opencode.json`:
 
-### Project-level
+```json
+{
+  "plugin": ["opencode-line-endings"]
+}
+```
 
-1. Copy `index.ts` into your project's plugins directory:
+OpenCode installs the package and its dependencies automatically at startup.
+
+### Alternative: local file
+
+If you prefer not to use npm, copy `index.ts` directly into your plugins directory. Since this plugin depends on the `editorconfig` package, you also need a `package.json` in the config directory.
+
+**Project-level:**
 
 ```sh
 cp index.ts <project>/.opencode/plugins/line-endings.ts
 ```
 
-2. Add the `editorconfig` dependency to `.opencode/package.json` (create it if it doesn't exist):
+Add to `.opencode/package.json`:
 
 ```json
 {
@@ -26,33 +38,19 @@ cp index.ts <project>/.opencode/plugins/line-endings.ts
 }
 ```
 
-OpenCode runs `bun install` at startup to install these dependencies automatically.
-
-### Global
-
-1. Copy `index.ts` to the global plugins directory:
+**Global:**
 
 ```sh
 cp index.ts ~/.config/opencode/plugins/line-endings.ts
 ```
 
-2. Add the dependency to `~/.config/opencode/package.json`:
+Add to `~/.config/opencode/package.json`:
 
 ```json
 {
   "dependencies": {
     "editorconfig": "^3.0.2"
   }
-}
-```
-
-### Via opencode.json (npm)
-
-If published to npm, add to your `opencode.json`:
-
-```json
-{
-  "plugin": ["opencode-line-endings"]
 }
 ```
 
