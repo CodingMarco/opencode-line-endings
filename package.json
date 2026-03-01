@@ -4,6 +4,14 @@
   "description": "OpenCode plugin that enforces consistent line endings (LF or CRLF) on file edits",
   "type": "module",
   "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodingMarco/opencode-line-endings.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CodingMarco/opencode-line-endings/issues"
+  },
+  "homepage": "https://github.com/CodingMarco/opencode-line-endings#readme",
   "dependencies": {
     "@opencode-ai/plugin": "latest",
     "editorconfig": "^3.0.2"
